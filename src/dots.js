@@ -28,7 +28,7 @@ export var Dots = React.createClass({
     // Apply join & split to Array to pre-fill it for IE8
     //
     // Credit: http://stackoverflow.com/a/13735425/1849458
-    var dotsTitles = _this.props.dotsTitles || [];
+    var dotsTitles = this.props.dotsTitles || [];
     var dots = Array.apply(null, Array(dotCount + 1).join('0').split('')).map((x, i) => {
 
       var leftBound = (i * this.props.slidesToScroll);
