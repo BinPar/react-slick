@@ -10,6 +10,7 @@ var getDotCount = function (spec) {
 };
 
 
+
 export var Dots = React.createClass({
 
   clickHandler: function (options, e) {
