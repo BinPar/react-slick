@@ -46,9 +46,10 @@ export var Dots = React.createClass({
 
       var onClick = this.clickHandler.bind(this, dotOptions);
 
+    var title = dotsTitles && dotsTitles[i] || "";
       return (
         <li key={i} className={className}>
-            <em>{dotsTitles[i]||""}</em>
+            <em>{title}</em>
           {React.cloneElement(this.props.customPaging(i), {onClick})}
         </li>
       );

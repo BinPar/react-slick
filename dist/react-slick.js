@@ -385,7 +385,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (this.props.dots === true && this.state.slideCount >= this.props.slidesToShow) {
 	      var dotProps = {
-	        dotsTitles: this.props.dotsTitles,
+	        dotsTitles: this.props.dotsTitles || [],
 	        dotsClass: this.props.dotsClass,
 	        slideCount: this.state.slideCount,
 	        slidesToShow: this.props.slidesToShow,
@@ -1867,13 +1867,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      var onClick = _this.clickHandler.bind(_this, dotOptions);
 
+	      var title = dotsTitles && dotsTitles[i] || "";
 	      return _react2.default.createElement(
 	        'li',
 	        { key: i, className: className },
 	        _react2.default.createElement(
 	          'em',
 	          null,
-	          dotsTitles[i] || ""
+	          title
 	        ),
 	        _react2.default.cloneElement(_this.props.customPaging(i), { onClick: onClick })
 	      );
