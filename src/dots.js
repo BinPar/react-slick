@@ -28,7 +28,7 @@ export var Dots = React.createClass({
     // Apply join & split to Array to pre-fill it for IE8
     //
     // Credit: http://stackoverflow.com/a/13735425/1849458
-    var dotsTitles = this.props.dotsTitles || [];
+    var titles = this.props.dotsTitles || [];
     var dots = Array.apply(null, Array(dotCount + 1).join('0').split('')).map((x, i) => {
 
       var leftBound = (i * this.props.slidesToScroll);
@@ -46,8 +46,8 @@ export var Dots = React.createClass({
 
       var onClick = this.clickHandler.bind(this, dotOptions);
 
-    var title = dotsTitles && dotsTitles[i] || "";
-      return (
+    var title = titles && titles[i] || "";
+    return (
         <li key={i} className={className}>
             <em>{title}</em>
           {React.cloneElement(this.props.customPaging(i), {onClick})}

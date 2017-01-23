@@ -385,7 +385,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (this.props.dots === true && this.state.slideCount >= this.props.slidesToShow) {
 	      var dotProps = {
-	        dotsTitles: this.props.dotsTitles || [],
+	        dotsTitles: this.props.dotsTitles,
 	        dotsClass: this.props.dotsClass,
 	        slideCount: this.state.slideCount,
 	        slidesToShow: this.props.slidesToShow,
@@ -1849,7 +1849,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Apply join & split to Array to pre-fill it for IE8
 	    //
 	    // Credit: http://stackoverflow.com/a/13735425/1849458
-	    var dotsTitles = this.props.dotsTitles || [];
+	    var titles = this.props.dotsTitles || [];
 	    var dots = Array.apply(null, Array(dotCount + 1).join('0').split('')).map(function (x, i) {
 
 	      var leftBound = i * _this.props.slidesToScroll;
@@ -1867,7 +1867,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      var onClick = _this.clickHandler.bind(_this, dotOptions);
 
-	      var title = dotsTitles && dotsTitles[i] || "";
+	      var title = titles && titles[i] || "";
 	      return _react2.default.createElement(
 	        'li',
 	        { key: i, className: className },
